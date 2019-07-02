@@ -1,0 +1,119 @@
+{
+    "id": "com.somasmarthome",
+    "sdk": 2,
+    "brandColor": "#b35900",
+    "name": {
+        "en": "Soma Smart Shade"
+    },
+    "description": {
+        "en": "Integrate Soma Smart Shade into Homey"
+     },
+    "category": [
+        "tools",
+        "appliances"
+    ],
+    "permissions": [
+        "homey:wireless:ble"
+    ],
+	"version": "0.9.0",
+    "compatibility": ">=2.1.2",
+    "tags": {
+        "en": [
+            "Soma",
+            "Shade",
+            "Blind",
+            "Curtain",
+            "WindowCovering",
+            "Window",
+            "Covering"
+        ]
+     },
+    "images": {
+        "small": "/assets/images/small.png",
+        "large": "/assets/images/large.png"
+    },
+    "author": {
+        "name": "Gerard Ricart",
+        "email": "gerard.ricart@gmail.com"
+    },
+    "contributing": {
+        "donate": {
+            "paypal": {
+                "username": "XattSPT"
+            }
+        }
+    },
+    "drivers": [
+        {
+            "id": "soma",
+            "name": {
+                "en": "Soma Smart Shade"
+            },
+            "images": {
+                "small": "drivers/soma/assets/images/small.png",
+                "large": "drivers/soma/assets/images/large.png"
+            },
+            "class": "windowcoverings",
+            "capabilities": [
+                "windowcoverings_set",
+                "windowcoverings_state",
+                "measure_battery"
+            ],
+            "pair": [
+                {
+                    "id": "start"
+                },
+                {
+                    "id": "list_my_devices",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_my_devices"
+                    }
+                },
+                {
+                    "id": "add_my_devices",
+                    "template": "add_devices"
+                }
+            ],
+            "settings": [
+                {
+                    "type": "group",
+                    "label": {
+                        "en": "Device info"
+                    },
+                    "children": [
+                        {
+                            "id": "last_updated",
+                            "type": "label",
+                            "label": {
+                                "en": "Last updated"                            },
+                            "value": ""
+                        },
+                        {
+                            "id": "uuid",
+                            "type": "label",
+                            "label": {
+                                "en": "Device uuid address"
+                            },
+                            "value": ""
+                        }
+                    ]
+                }
+            ],
+            "mobile": {
+                "components": [
+                    {
+                        "id": "icon"
+                    },
+                    {
+                        "id": "battery",
+                        "capabilities": [
+                            "measure_battery"
+                        ]
+                    }
+                    
+                ]
+            }
+        }
+    ]
+}

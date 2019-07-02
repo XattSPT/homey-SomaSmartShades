@@ -1,0 +1,71 @@
+{
+    "pair" : {
+        "title" : "Searching for Soma Smart Shades devices",
+        "info" : {
+            "title" : "Keep in mind:",
+            "row1" : "For an optimal signal strength keep Soma within a close distance of Homey.",
+            "row2" : "Always download the original `Soma Smart Shades` app and add the devices to the app. This automatically updates the Soma's firmware to the latest version."
+        },
+        "faq" : {
+            "title" : "Frequently asked questions:",
+            "question1" : "Why can't the Soma be found by Homey?",
+            "answer1" : "Check if the Soma is not connected to another bluetooth device. The `Soma Smart Shades` app for example"
+        },
+        "configure" : "Search devices"
+    },
+    "settings" : {
+        "title" : "Settings Soma Smart Shades",
+        "update" : "Update settings",
+        "interval" : {
+            "label" : "Interval between updates in minutes",
+            "info" : "The delay between reading Soma values in minutes. The minimal interval is 5 minutes. The default interval is 15 minutes."
+        },
+        "titlemqtt": "MQTT",
+        "mqtt": "Enable MQTT",
+        "mqttserver" : {
+            "host" : "MQTT Broker IP or Name:",
+            "port" : "MQTT Broker Port:            ",
+            "receive" : "MQTT Topic to RECEIVE (see info below)                :",
+            "info" : "This funcion Publish at following Topics: SomaShade/RISEXXX/(position/state/battery)/value",
+            "info2" : "Where RISEXXX is SomaShadeName, followed by action and value.",
+            "info3" : "Also subscribe to RECEIVE topic (ej:move) (SomaShade/RISEXXX/move/value) to receive external actions."
+        },
+        "save" : {
+            "label" : "Save"
+        },
+        "success" : "The settings has been saved",
+        "error" : {
+            "threshold" : "The min and max threshold for `__capability__` is not a valid."
+        }
+    },
+    "capability": {
+        "soma_position": {
+            "name" : "position",
+            "suffix" : "",
+            "changed" : "The position is changed to: __value__.",
+            "device_changed" : "The position of `__plant__` is changed to: __value__.",
+            "device_updated" : "The position of `__plant__` is updated to: __value__.",
+            "threshold": {
+                "min" : "The position (__value__) of `__plant__` is to low. This must be at least __min__.",
+                "max" : "The position (__value__°C) of `__plant__` is to high. This must be a maximum of __max__."
+            }
+        },
+        "soma_identify": {
+            "name" : "indentify",
+            "suffix" : "",
+            "changed" : "The identify is changed to: __value__ .",
+            "device_changed" : "The identify of `__plant__` is changed to: __value__ .",
+            "device_updated" : "The identify of `__plant__` is updated to: __value__ .",
+            "threshold": {
+                "min" : "The identify (__value__ ) of `__plant__` is to low. This must be at least __min__ .",
+                "max" : "The identify (__value__ ) of `__plant__` is to high. This must be a maximum of __max__ ."
+            }
+        },
+        "soma_battery": {
+            "name": "battery",
+            "changed" : "The battery is changed to: __value__%.",
+            "device_changed" : "The battery of `__plant__` is changed to: __value__%.",
+            "device_updated" : "The battery of `__plant__` is updated to: __value__%."
+        }
+    }
+}
