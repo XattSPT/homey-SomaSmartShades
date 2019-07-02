@@ -39,6 +39,6 @@ Many thanks to kokotaildotcom for his homey-mi-app. You can check it at: https:/
 I've get from his app much inspiration, BLE learning and (why not) some functions! ;-) 
   
 ## Final note ##
-The repository is available at: https://github.com/XattSPT/homey-somashades
+The repository is available at: https://github.com/XattSPT/homey-SomaSmartShades
 
 Please, be kind on me, this my first App done as a Hooby! I'll do my best to resolve any bugs or malfunction.
