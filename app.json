@@ -15,7 +15,7 @@
     "permissions": [
         "homey:wireless:ble"
     ],
-	"version": "0.9.0",
+	"version": "0.9.1",
     "compatibility": ">=2.1.2",
     "tags": {
         "en": [
