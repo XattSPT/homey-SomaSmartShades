@@ -43,3 +43,12 @@ I've get from his app much inspiration, BLE learning and (why not) some function
 The repository is available at: https://github.com/XattSPT/homey-SomaSmartShades
 
 Please, be kind on me, this my first App done as a Hooby! I'll do my best to resolve any bugs or malfunction.
+
+
+## Change Log:
+
+### v 0.9.1
+Complete node_modules upload to proper install
+
+### v 0.9.0
+First public release
