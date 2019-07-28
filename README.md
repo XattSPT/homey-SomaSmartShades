@@ -47,6 +47,9 @@ Please, be kind on me, this my first App done as a Hooby! I'll do my best to res
 
 ## Change Log:
 
+### v 0.9.2
+Added compatibility with 2nd Generation Soma's
+
 ### v 0.9.1
 Complete node_modules upload to proper install on Homey
 
