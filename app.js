@@ -270,7 +270,21 @@ class HomeySomaShade extends Homey.App {
                 });
                 advertisements.forEach(function (advertisement) {
                     if(advertisement.localName != undefined){
-                    if (advertisement.localName.startsWith('RISE')) {
+                    if (advertisement.localName == 'S') {
+                        ++index;
+                        devices.push({
+                            "name": driver.getSomaShadeBleName() + " " + advertisement.uuid,
+                            "data": {
+                                "id": advertisement.id,
+                                "uuid": advertisement.uuid, 
+                               "address": advertisement.uuid,
+                                "name": advertisement.uuid,
+                                "type": advertisement.addressType,
+                                "version": "v" + Homey.manifest.version,
+                            },
+                            "capabilities": driver.getSupportedCapabilities(),
+                        });        
+                    } else if (advertisement.localName.startsWith('RISE')) {
                         ++index;
                         devices.push({
                             "name": driver.getSomaShadeBleName() + " " + advertisement.localName,
