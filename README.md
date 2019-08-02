@@ -54,8 +54,6 @@ Added OnOff Cabalility. "On Position" and "Off Position" on Homey App could be c
 
 NOTE: It's necessary to delete and re-add devices for proper re-asignation on Homeykit and On Off capability if you have previos versions.
 
-=======
->>>>>>> 50e25b1ee77490c9f4c41e0a8a16fb707fc8e04c
 ### v 0.9.2
 Added compatibility with 2nd Generation Soma's
 
