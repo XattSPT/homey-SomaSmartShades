@@ -15,7 +15,8 @@ class SomaShadeSensorDriver extends SomaShadeDriver {
         return [
             "windowcoverings_set",
             "windowcoverings_state",
-            "measure_battery"
+            "measure_battery",
+            "onoff"
         ];
     }
 }
