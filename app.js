@@ -132,14 +132,16 @@ class HomeySomaShade extends Homey.App {
 
             let oldposition = 100- (device.getCapabilityValue('windowcoverings_set')*100);
             let oldmotor = device.getCapabilityValue('windowcoverings_state');
-
-            if (motor.value[0] == '150' || motor.value[0] == '105'){
-                this._syncTimeout = setTimeout(() => this.handleUpdateSequence(device), 15000);
-            }else if (motor.value[0] !== '105' && motor.value[0] !== '150' && Math.abs(closeposition - oldposition) > 2){
+            if (Math.abs(closeposition - oldposition) < 2 && motor.value[0]==0) {
+                device.setCapabilityValue('windowcoverings_state', 'idle')
+                motor.value[0] = 0
+            }
+            if (motor.value[0] !== '105' && motor.value[0] !== '150' && Math.abs(closeposition - oldposition) > 3){
                 trueposition = (100 - move) / 100
                 this._syncTimeout = setTimeout(() => this.handleUpdateSequence(device), 15000);
+            } else if (motor.value[0] == '150' || motor.value[0] == '105'){
+                this._syncTimeout = setTimeout(() => this.handleUpdateSequence(device), 15000);
             }
-
 
             let sensorValues = {
             
@@ -148,7 +150,7 @@ class HomeySomaShade extends Homey.App {
                 'windowcoverings_state': truemotor,
             }
             await asyncForEach(device.getCapabilities(), async (characteristic) => {
-            try {
+                try {
                 if (sensorValues.hasOwnProperty(characteristic)) {
                     device.updateCapabilityValue(characteristic, sensorValues[characteristic]);
                 } 
@@ -157,7 +159,6 @@ class HomeySomaShade extends Homey.App {
             }
         });
         await disconnectPeripheral();
-        //console.log('Device sync complete in: ' + (new Date() - updateDeviceTime) / 1000 + ' seconds');
         return device;
         }
         catch (error) {
@@ -241,7 +242,6 @@ class HomeySomaShade extends Homey.App {
             let value = (Math.min(1,Math.max(0,message.toString())/100)).toFixed(2).toString()
             value = value.toString()
             if (data[2] == 'move'){
-                //console.log('rise ',data[1], ' action ', data[2], ' value ', message.toString());
                 await desireddevice.onCapabilitySet(value)
             }
         } catch (error) {

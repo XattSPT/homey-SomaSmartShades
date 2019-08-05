@@ -48,8 +48,9 @@ Please, be kind on me, this my first App done as a Hooby! I'll do my best to res
 ## Change Log:
 
 ### v 0.9.3
-Changed Class to "curtain" for better integration with Homeykit.
-Added OnOff Cabalility. "On Position" and "Off Position" on Homey App could be configured on device advanced settings (default 0 & 100)
+- Changed Class to "curtain" for better integration with Homeykit.
+- Added OnOff Cabalility. "On Position" and "Off Position" on Homey App could be configured on device advanced settings (default 0 & 100)
+- Minor improvements and bud fixes.
 
 NOTE: It's necessary to delete and re-add devices for proper re-asignation on Homeykit and On Off capability if you have previos versions.
 
