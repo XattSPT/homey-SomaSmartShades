@@ -143,11 +143,19 @@ class HomeySomaShade extends Homey.App {
                 this._syncTimeout = setTimeout(() => this.handleUpdateSequence(device), 15000);
             }
 
+            let onoffposition
+            const settings = device.getSettings();
+            if (trueposition > settings.Offpos){
+                onoffposition = true
+            }else{
+                onoffposition = false
+            }
             let sensorValues = {
             
                 'windowcoverings_set': trueposition,
                 'measure_battery': batteryValue,
                 'windowcoverings_state': truemotor,
+                'onoff': onoffposition,
             }
             await asyncForEach(device.getCapabilities(), async (characteristic) => {
                 try {
@@ -189,7 +197,7 @@ class HomeySomaShade extends Homey.App {
         if (device.retry === undefined) {
            device.retry = 0;
         }
-        
+        console.log("updatedevice")
         return await Homey.app.handleUpdateSequence(device)
         .then(() => {
             device.retry = 0;

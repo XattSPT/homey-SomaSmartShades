@@ -47,6 +47,10 @@ Please, be kind on me, this my first App done as a Hooby! I'll do my best to res
 
 ## Change Log:
 
+### v 1.0.0
+- Updated OnOff Cabalility. Minor bugs updating state on previous versions. 
+- Added Time Refresh for each device in order to update state after open/close. Adjust this setting acording your device time. 
+
 ### v 0.9.3
 - Changed Class to "curtain" for better integration with Homeykit.
 - Added OnOff Cabalility. "On Position" and "Off Position" on Homey App could be configured on device advanced settings (default 0 & 100)
