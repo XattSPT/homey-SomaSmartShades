@@ -4,5 +4,8 @@
   },
   "1.0.0": {
     "en": "minor bug update in onoffcapability"
+  },
+  "1.0.1": {
+    "en": "Minor bugfix on OnOff Cabality. New appstore files. "
   }
 }

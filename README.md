@@ -47,6 +47,9 @@ Please, be kind on me, this my first App done as a Hooby! I'll do my best to res
 
 ## Change Log:
 
+### v 1.0.1
+- New Appsotre for Homey
+
 ### v 1.0.0
 - Updated OnOff Cabalility. Minor bugs updating state on previous versions. 
 - Added Time Refresh for each device in order to update state after open/close. Adjust this setting acording your device time. 
