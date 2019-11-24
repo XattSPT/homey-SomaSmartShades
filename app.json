@@ -15,7 +15,7 @@
     "permissions": [
         "homey:wireless:ble"
     ],
-	"version": "1.0.0",
+	"version": "1.0.1",
     "compatibility": ">=2.1.2",
     "tags": {
         "en": [
@@ -36,6 +36,10 @@
         "name": "Gerard Ricart",
         "email": "gerard.ricart@gmail.com"
     },
+    "bugs": {
+        "url": "https://github.com/XattSPT/homey-SomaSmartShades/issues"
+    },
+    "source": "https://github.com/XattSPT/homey-SomaSmartShades",
     "contributing": {
         "donate": {
             "paypal": {

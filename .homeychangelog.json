@@ -1,5 +1,8 @@
 {
   "0.9.3": {
     "en": "minor bug update"
+  },
+  "1.0.0": {
+    "en": "minor bug update in onoffcapability"
   }
 }
