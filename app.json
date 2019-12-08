@@ -6,7 +6,7 @@
         "en": "Soma Smart Shade"
     },
     "description": {
-        "en": "Integrate Soma Smart Shade into Homey"
+        "en": "Soma Smart Shade without Soma-Connect"
      },
     "category": [
         "tools",
@@ -15,7 +15,7 @@
     "permissions": [
         "homey:wireless:ble"
     ],
-	"version": "1.0.1",
+	"version": "1.0.2",
     "compatibility": ">=2.1.2",
     "tags": {
         "en": [
@@ -64,6 +64,9 @@
                 "measure_battery",
                 "onoff"
             ],
+            "energy": {
+                "batteries": [ "INTERNAL" ]
+            },
             "pair": [
                 {
                     "id": "start"
@@ -91,7 +94,8 @@
                             "id": "last_updated",
                             "type": "label",
                             "label": {
-                                "en": "Last updated"                            },
+                                "en": "Last updated"
+                            },
                             "value": ""
                         },
                         {
