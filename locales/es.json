@@ -1,0 +1,71 @@
+{
+    "pair" : {
+        "title" : "Buscando dispositivos Soma Smart Shades",
+        "info" : {
+            "title" : "Recuerda:",
+            "row1" : "Para una correcta búsqueda, manten el dispositivo Soma cercano a tu Homey.",
+            "row2" : "Siempre descarga la app original de `Soma Smart Shades` y configura tus dispositivos a través de ella para disponer del ultima versión de firmware."
+        },
+        "faq" : {
+            "title" : "Preguntas Frequentes:",
+            "question1" : "Porque no se halla mi dispositvo Soma en Homey?",
+            "answer1" : "Asegurate que el dispositivo Soma no está conectado a otro dispositivo bluetooth. La aplicación `Soma Smart Shades` por ejemplo."
+        },
+        "configure" : "Buscar dispositivos"
+    },
+    "settings" : {
+        "title" : "Configuración Soma Smart Shades",
+        "update" : "Actualización de Configuración",
+        "interval" : {
+            "label" : "Intervalo entre actualizaciones en minutos",
+            "info" : "Tiempo entre las lecturas de estado en tu Soma en minutos. El tiempo mínimo es de 5 minutos. Por defecto el interval es de 15 minutos."
+        },
+        "titlemqtt": "MQTT",
+        "mqtt": "Habilita MQTT",
+        "mqttserver" : {
+            "host" : "MQTT Broker IP or Nombre:",
+            "port" : "MQTT Broker Puerto:            ",
+            "receive" : "MQTT Topic para RECIBIR (ver mas abajo)                :",
+            "info" : "Esta función publica en el siguiente Tópico: SomaShade/RISEXXX/(position/state/battery)/value",
+            "info2" : "Dónde RISEXXX es el Nombre de SomaShade, seguido de la acción y el valor.",
+            "info3" : "También puedes subscribirte al siguiente tópico (ej:move) (SomaShade/RISEXXX/move/value) para recibir acciones del Soma desde otras aplicaciones."
+        },
+        "save" : {
+            "label" : "Grabar"
+        },
+        "success" : "La configuración ha sido grabada",
+        "error" : {
+            "threshold" : "El mínimo y máximo de la variable `__capability__` no es válido."
+        }
+    },
+    "capability": {
+        "soma_position": {
+            "name" : "Posición",
+            "suffix" : "",
+            "changed" : "La posición ha cambiado a: __value__.",
+            "device_changed" : "La posición de `__plant__` ha cambiado a: __value__.",
+            "device_updated" : "La posición de `__plant__` se ha actualizado a: __value__.",
+            "threshold": {
+                "min" : "La posición (__value__) de `__plant__` es demasiado baja. Debe ser almenos de __min__.",
+                "max" : "La posición (__value__)  `__plant__` es demasiado alta. Debe ser almenos de __max__."
+            }
+        },
+        "soma_identify": {
+            "name" : "Identificar",
+            "suffix" : "",
+            "changed" : "La identificación ha cambiado a to: __value__ .",
+            "device_changed" : "La identificación de `__plant__` ha cambiado a: __value__.",
+            "device_updated" : "La identificación de `__plant__` se ha actualizado a: __value__.",
+            "threshold": {
+                "min" : "La identificación (__value__) de `__plant__` es demasiado baja. Debe ser almenos de __min__.",
+                "max" : "La identificación (__value__)  `__plant__` es demasiado alta. Debe ser almenos de __max__."
+            }
+        },
+        "soma_battery": {
+            "name": "Batería",
+            "changed" : "la Batería ha cambiado a: __value__%.",
+            "device_changed" : "La batería de `__plant__` ha cambiado a: __value__.",
+            "device_updated" : "La batería de `__plant__` se ha actualizado a: __value__.",
+        }
+    }
+}

@@ -3,10 +3,12 @@
     "sdk": 2,
     "brandColor": "#b35900",
     "name": {
-        "en": "Soma Smart Shade"
+        "en": "Soma Smart Shade",
+        "es": "Soma Smart Shade"
     },
     "description": {
-        "en": "Soma Smart Shade without Soma-Connect"
+        "en": "Soma Smart Shade without Soma-Connect",
+        "es": "Integra Soma Smart Shade sin Soma-Connect"
      },
     "category": [
         "tools",
@@ -26,6 +28,13 @@
             "WindowCovering",
             "Window",
             "Covering"
+        ],
+        "es": [
+            "Soma",
+            "Shade",
+            "Cortina",
+            "Persiana",
+            "Ventana"
         ]
      },
     "images": {
@@ -51,7 +60,8 @@
         {
             "id": "soma",
             "name": {
-                "en": "Soma Smart Shade"
+                "en": "Soma Smart Shade",
+                "es": "Soma Smart Shade"
             },
             "images": {
                 "small": "drivers/soma/assets/images/small.png",
@@ -87,14 +97,16 @@
                 {
                     "type": "group",
                     "label": {
-                        "en": "Device info"
+                        "en": "Device info",
+                        "es": "Información Dispositivo"
                     },
                     "children": [
                         {
                             "id": "last_updated",
                             "type": "label",
                             "label": {
-                                "en": "Last updated"
+                                "en": "Last updated",
+                                "es": "Última actualización"
                             },
                             "value": ""
                         },
@@ -102,7 +114,8 @@
                             "id": "uuid",
                             "type": "label",
                             "label": {
-                                "en": "Device uuid address"
+                                "en": "Device UUID address",
+                                "es": "Dirección UUID"
                             },
                             "value": ""
                         },
@@ -110,7 +123,8 @@
                             "id": "Onpos",
                             "type": "number",
                             "label": {
-                                "en": "Open Position"
+                                "en": "Open Position",
+                                "es": "Posición Abierto"
                             },
                             "value": 100,
                             "min": 0,
@@ -120,7 +134,8 @@
                             "id": "Offpos",
                             "type": "number",
                             "label": {
-                                "en": "Close Position"
+                                "en": "Close Position",
+                                "es": "Posición Cerrado"
                             },
                             "value": 0,
                             "min": 0,
@@ -130,7 +145,8 @@
                             "id": "Refreshtime",
                             "type": "number",
                             "label": {
-                                "en": "Refresh State (s)"
+                                "en": "Refresh State (s)",
+                                "es": "Actualización Estado (s)"
                             },
                             "value": 45,
                             "min": 30,
