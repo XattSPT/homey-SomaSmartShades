@@ -44,26 +44,23 @@ class HomeySomaShade extends Homey.App {
      * connect to the sensor, update data and disconnect
      */
     async handleUpdateSequence(device) {
-        let disconnectPeripheral = async () => {
-            console.log('disconnectPeripheral not registered yet')
-        };
-
         try {
             let updateDeviceTime = new Date();
             const advertisement = await Homey.app.find(device);
             const peripheral = await advertisement.connect();
-            disconnectPeripheral = async () => {
+            const services = await peripheral.discoverServices();
+            const dataService = await services.find(service => service.uuid === DATAINFORMATION_SERVICE_UUID);
+            let disconnectPeripheral = async () => {
                 try {
                     if (peripheral.isConnected) {
-
                         return await peripheral.disconnect()
+                    } else {
+                        console.log('disconnectPeripheral not registered yet')
                     }
                 } catch (err) {
                     throw new Error(err);
                 }
-            };
-            const services = await peripheral.discoverServices();
-            const dataService = await services.find(service => service.uuid === DATAINFORMATION_SERVICE_UUID);
+            };             
             if (!dataService) {
                 throw new Error('Missing data service');
             }
@@ -170,7 +167,7 @@ class HomeySomaShade extends Homey.App {
         return device;
         }
         catch (error) {
-            await disconnectPeripheral();
+            //await disconnectPeripheral();
             throw error;
         }
     }
@@ -205,8 +202,8 @@ class HomeySomaShade extends Homey.App {
         })
         .catch(error => {
             device.retry++;
-            console.log('timeout, retry again ' + device.retry);
-            console.log(error);
+            console.log('timeout, retry again ' + device.retry + ' device: ' + device.getName());
+            //console.log(error);
 
             if (device.retry < MAX_RETRIES) {
                 return Homey.app.updateDevice(device)
@@ -215,20 +212,8 @@ class HomeySomaShade extends Homey.App {
                 });
             }
 
-            Homey.app.globalSensorTimeout.trigger({
-                'deviceName': device.getName(),
-                'reason': error
-            })
-            .then(function () {
-                console.log('sending device timeout trigger');
-            })
-            .catch(function (error) {
-                console.error('Cannot trigger flow card sensor_timeout device: %s.', error);
-            });
-
             device.retry = 0;
-
-            throw new Error('Max retries exceeded, no success');
+            console.log('Max retries exceeded, no success - Device: '+device.getName());
         });
         } catch (err) {
         throw new Error(err);
