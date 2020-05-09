@@ -65,7 +65,7 @@
             "name": "Batería",
             "changed" : "la Batería ha cambiado a: __value__%.",
             "device_changed" : "La batería de `__plant__` ha cambiado a: __value__.",
-            "device_updated" : "La batería de `__plant__` se ha actualizado a: __value__.",
+            "device_updated" : "La batería de `__plant__` se ha actualizado a: __value__."
         }
     }
 }
