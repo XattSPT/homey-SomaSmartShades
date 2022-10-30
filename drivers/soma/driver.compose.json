@@ -1,0 +1,112 @@
+{
+  "name": {
+    "en": "Soma Smart Shade",
+    "es": "Soma Smart Shade"
+  },
+  "images": {
+    "small": "drivers/soma/assets/images/small.png",
+    "large": "drivers/soma/assets/images/large.png"
+  },
+  "class": "curtain",
+  "capabilities": [
+    "windowcoverings_set",
+    "measure_battery",
+    "onoff"
+  ],
+  "energy": {
+    "batteries": [
+      "INTERNAL"
+    ]
+  },
+  "pair": [
+    {
+      "id": "start"
+    },
+    {
+      "id": "list_my_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_my_devices"
+      }
+    },
+    {
+      "id": "add_my_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device info",
+        "es": "Información Dispositivo"
+      },
+      "children": [
+        {
+          "id": "last_updated",
+          "type": "label",
+          "label": {
+            "en": "Last updated",
+            "es": "Última actualización"
+          },
+          "value": ""
+        },
+        {
+          "id": "uuid",
+          "type": "label",
+          "label": {
+            "en": "Device UUID address",
+            "es": "Dirección UUID"
+          },
+          "value": ""
+        },
+        {
+          "id": "Onpos",
+          "type": "number",
+          "label": {
+            "en": "Open Position",
+            "es": "Posición Abierto"
+          },
+          "value": 100,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "Offpos",
+          "type": "number",
+          "label": {
+            "en": "Close Position",
+            "es": "Posición Cerrado"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "Refreshtime",
+          "type": "number",
+          "label": {
+            "en": "Refresh State (s)",
+            "es": "Actualización Estado (s)"
+          },
+          "value": 45,
+          "min": 30,
+          "max": 100
+        }
+      ]
+    }
+  ],
+  "mobile": {
+    "components": [
+      {
+        "id": "icon"
+      },
+      {
+        "id": "battery",
+        "capabilities": [
+          "measure_battery"
+        ]
+      }
+    ]
+  }
+}

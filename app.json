@@ -70,7 +70,6 @@
       "class": "curtain",
       "capabilities": [
         "windowcoverings_set",
-        "windowcoverings_state",
         "measure_battery",
         "onoff"
       ],
