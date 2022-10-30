@@ -49,60 +49,6 @@
     </table>
 </fieldset>
 
-<fieldset>
-    <legend>
-        <p data-i18n="settings.titlemqtt"></p>
-    </legend>
-
-    <table class="setting-row">
-        <tbody>
-        <tr>
-            <td colspan="2">    
-                <label for="mqttenabled"></label>
-                    <p data-i18n="settings.mqtt"></p>
-                </label>
-            </td>
-            <td>
-                <input id="mqttenabled" class="rigth" type="checkbox"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="mqtthost"></label>
-                    <p data-i18n="settings.mqttserver.host"></p>
-                </label>
-            </td>
-            <td>
-                <input id="mqtthost" class="left" type="text"/> 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="mqttport"></label>
-                    <p data-i18n="settings.mqttserver.port"></p>
-                </label>
-            <td>
-                <input id="mqttport" class="left" type="text"/> 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="mqttreceive"></label>
-                    <p data-i18n="settings.mqttserver.receive"></p>
-                </label>
-            <td>
-                <input id="mqttreceive" class="left" type="text"/> 
-            </td>
-        </tr>
-        <tr>
-            <i data-i18n="settings.mqttserver.info" class="note"></i>
-            <i data-i18n="settings.mqttserver.info2" class="note"></i>
-            <i data-i18n="settings.mqttserver.info3" class="note"></i>
-        </tr>
-        </tbody>
-    </table>
-</fieldset>
-
 <div class="field row">
     <button id="save" class="right"><p data-i18n="settings.save.label"></p></button>
 </div>
@@ -116,52 +62,11 @@
             if (err) return Homey.alert(err);
             updateIntervalElement.value = updateInterval;
         });
-        let updatemqttenabledElement = document.getElementById('mqttenabled');
-        Homey.get('mqttenabled', function (err, mqttenabled) {
-            if (err) return Homey.alert(err);
-            updatemqttenabledElement.value = mqttenabled;
-            if (updatemqttenabledElement.value == "true"){
-                document.getElementById("mqttenabled").checked = true;
-            }else{
-                document.getElementById("mqttenabled").checked = false;
-            }
-        });
-        let updatemqtthostElement = document.getElementById('mqtthost');
-        Homey.get('mqtthost', function (err, mqtthost) {
-            if (err) return Homey.alert(err);
-            updatemqtthostElement.value = mqtthost;
-        });
-        let updatemqttportElement = document.getElementById('mqttport');
-        Homey.get('mqttport', function (err, mqttport) {
-            if (err) return Homey.alert(err);
-            updatemqttportElement.value = mqttport;
-        });
-        let updatemqttreceiveElement = document.getElementById('mqttreceive');
-        Homey.get('mqttreceive', function (err, mqttreceive) {
-            if (err) return Homey.alert(err);
-            updatemqttreceiveElement.value = mqttreceive;
-        });
+        
 
         let saveElement = document.getElementById('save');
         saveElement.addEventListener('click', function (e) {
             Homey.set('updateInterval', updateIntervalElement.value, function (err) {
-                if (err) return Homey.alert(err);
-            });
-            if (document.getElementById("mqttenabled").checked === true){
-                updatemqttenabledElement.value ="true";
-            }else{
-                updatemqttenabledElement.value = "false";
-            }
-            Homey.set('mqttenabled', updatemqttenabledElement.value, function (err) {
-                if (err) return Homey.alert(err);
-            });
-            Homey.set('mqtthost', updatemqtthostElement.value, function (err) {
-                if (err) return Homey.alert(err);
-            });
-            Homey.set('mqttport', updatemqttportElement.value, function (err) {
-                if (err) return Homey.alert(err);
-            });
-            Homey.set('mqttreceive', updatemqttreceiveElement.value, function (err) {
                 if (err) return Homey.alert(err);
             });
             Homey.alert(__("settings.success"));

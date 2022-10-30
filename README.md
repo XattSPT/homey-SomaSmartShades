@@ -47,6 +47,10 @@ Please, be kind on me, this my first App done as a Hooby! I'll do my best to res
 
 ## Change Log:
 
+### v 2.0.0
+- Updated to SDK3
+- Deleted MQTT service
+
 ### v 1.0.2
 - Minor Adapt to Soma Tilt
 - Added Energy Information
